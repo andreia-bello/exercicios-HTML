@@ -25,7 +25,7 @@ app.get("/api/v1/pessoas", (req, res) => {
 
 //R
 app.get("/api/v1/pessoa/:id", (req, res) => {
-    const id = req.params.id
+    const id = Number(req.params.id)
 
     const pessoa = db.find(p => p.id === id)
 
@@ -36,14 +36,42 @@ app.get("/api/v1/pessoa/:id", (req, res) => {
     res.send({message: "Pessoa encontrada com sucesso", pessoa})
  })
 //U
-app.put("/api/v1/pessoa/:id", (req, res) => { })
+app.put("/api/v1/pessoa/:id", (req, res) => { 
+    const id = Number(req.params.id)
+    const {email} = req.body
+    const pessoa = db.find(it => it.id === id)
+
+    if(!pessoa) {
+        res.status(404).send({message: "Pessoa não encontrada!"})
+        return
+    }
+    
+    pessoa.email = email
+    res.send({message: "Pessoa alterada com sucesso"})
+})
 //D
-app.delete("/api/v1/pessoa/:id", (req, res) => { })
+app.delete("/api/v1/pessoa/:id", (req, res) => {
+    const id = Number(req.params.id)
+
+    const index = db.findIndex(it => it.id === id)
+
+    if(index === -1) {
+        res.status(404).send({message: "Pessoa não encontrada"})
+        return
+    }
+
+    db.splice(index, 1)
+
+    res.send({message: "Pessoa deletada com sucesso!"})
+
+ })
  
 app.listen(3000, () => {
     console.log(`Servidor rodando em http://localhost:${3000}`);
 });
 
 
-
+// res.send() → envia resposta com status padrão 200,
+// res.status(404).send() → envia resposta com status 404
+// p.id e it.id → não têm diferença; são apenas nomes diferentes para o mesmo elemento percorrido pelo find().
 
