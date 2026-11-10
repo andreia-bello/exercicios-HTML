@@ -8,9 +8,7 @@ app.get('/soma', (req, res) => {
     const num1 = Number(req.query.num1);
     const num2 = Number(req.query.num2);
 
-    res.send({
-        soma: num1 + num2
-    });
+    res.send({soma: num1 + num2});
 });
 
 // Exercício 2: Peça o valor que a pessoa ganha por hora e a quantidade de horas trabalhadas no mês. Mostre quanto ela vai receber no final do mês.
@@ -18,9 +16,7 @@ app.get('/salario', (req, res) => {
     const valorHora = Number(req.query.valorHora);
     const qtdHoras = Number(req.query.qtdHoras);
 
-    res.send({
-        salario: valorHora * qtdHoras
-    });
+    res.send({salario: valorHora * qtdHoras});
 });
 
 // Exercício 3: Peça o peso de 5 pessoas e calcule a média desses pesos. Mostre o resultado.
