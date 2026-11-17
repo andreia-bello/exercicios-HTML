@@ -1,0 +1,26 @@
+{
+  "name": "exercicios-html",
+  "version": "1.0.0",
+  "description": "minha primeria API",
+  "homepage": "https://github.com/andreiaballandbelloo-crypto/exercicios-HTML#readme",
+  "bugs": {
+    "url": "https://github.com/andreiaballandbelloo-crypto/exercicios-HTML/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreiaballandbelloo-crypto/exercicios-HTML.git"
+  },
+  "license": "ISC",
+  "author": "Andreia",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  },
+  "keywords": []
+}
