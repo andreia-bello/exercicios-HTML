@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/estilo.css">
+    <title>Gestão de usuário</title>
+    <link rel="stylesheet" href="styles/estilo.css">
 </head>
 <body>
     <main>
@@ -12,31 +12,36 @@
             <h1> Gestão de usuários</h1>
             <p>Cadastre, consulte, atualize e remova usuários em um só lugar</p>
         </header>
-            
+
         <section>
             <div>
                 <span>Dados do usuário</span>
                 <h2>Gerenciar cadastro</h2>
             </div>
-
             <div class="fields">
-
                 <label class="field">
                     <span>ID:</span>
                     <input type="text" id="id" placeholder="Ex: 007" autocomplete="off">
                 </label>
 
                 <label class="field">
-                    <span>Nome:</span>
-                    <input type="text" id="name" placeholder="Nome do Usuário" autocomplete="off">
+                    <span>Cpf:</span>
+                    <input type="text" id="cpf" placeholder="CPF" autocomplete="off">
                 </label>
+
+                <label class="field">
+                    <span>Email:</span>
+                    <input type="text" id="email" placeholder="Email" autocomplete="off">
+                </label>
+
             </div>
 
             <div class="action">
-                <button class="primary" type="button" onclick="criar()">Criar Usuário</button>
-                <button class="secondary" type="button" onclick="buscarTodos()">Buscar Todos</button>
-                <button class="secondary" type="button" onclick="alterar()">Alterar</button>
+                <button class="primary" type="button" onclick="criar()">Criar usuário</button>
+                <button class="secundary" type="button" onclick="buscartodos()">Buscar todos</button>
+                <button class="secundary" type="button" onclick="alterar()">Alterar</button>
                 <button class="danger" type="button" onclick="deletar()">Deletar</button>
+
             </div>
 
             <p class="feedback" id="resultado"></p>
@@ -45,19 +50,12 @@
         <section>
             <div>
                 <span>CADASTRADOS</span>
-                <h2>Lista de usuários</h2>
+                <h2>Lista de usuário</h2>
             </div>
+            <ul id="listaUsuarios"> </ul>
         </section>
-
-        <section>
-            <div>
-                <span>CADASTRADOS</span>
-                <h2>Lista de usuários</h2>
-            </div>
-            <ul id="listaUsuarios"></ul>
-        </section>
-
     </main>
-    <script src="scripts/index.js" ></script>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>

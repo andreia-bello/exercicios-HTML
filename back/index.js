@@ -22,7 +22,7 @@ app.post("/api/v1/pessoa", (req, res) => {
 })
 
 app.get("/api/v1/pessoas", (req, res) => {
-    res.send({message: "Pessoa encontrada com sucesso", db})
+    res.json({pessoas: db})
  })
 
 //R
